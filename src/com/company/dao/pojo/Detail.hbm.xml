@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-10-31 15:53:25 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping package="com.company.dao.pojo">
+    <class name="Detail" table="DETAIL">
+        <id name="detailId" type="int">
+            <column name="DETAILID" />
+            <generator class="foreign">
+            	<param name="property">login</param>
+            </generator>
+        </id>
+        <property name="realname" type="java.lang.String">
+            <column name="REALNAME" not-null="true" />
+        </property>
+        <property name="balance" type="double">
+            <column name="BALANCE" default="0.0" />
+        </property>
+        <property name="imgPath" type="java.lang.String">
+            <column name="IMGPATH" />
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="CREATETIME" />
+        </property>
+        <property name="updateTime" type="timestamp">
+            <column name="UPDATETIME" />
+        </property>
+        <one-to-one name="login" class="Login"></one-to-one>
+    </class>
+</hibernate-mapping>

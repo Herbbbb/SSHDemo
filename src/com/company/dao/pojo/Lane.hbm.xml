@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-10-31 15:49:07 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping package="com.company.dao.pojo">
+    <class name="Lane" table="LANE">
+        <id name="laneId" type="int">
+            <column name="LANEID" />
+            <generator class="native" />
+        </id>
+        <property name="strartLocation" type="java.lang.String">
+            <column name="STRARTLOCATION" />
+        </property>
+        <property name="endLoaction" type="java.lang.String">
+            <column name="ENDLOACTION" />
+        </property>
+        <property name="lanePrice" type="double">
+            <column name="LANEPRICE" />
+        </property>
+        <property name="flag" type="int">
+            <column name="FLAG" />
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="CREATETIME" />
+        </property>
+        <property name="updateTime" type="timestamp">
+            <column name="UPDATETIME" />
+        </property>
+    </class>
+</hibernate-mapping>

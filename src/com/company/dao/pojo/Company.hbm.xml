@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-10-31 15:49:07 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping package="com.company.dao.pojo">
+    <class name="Company" table="COMPANY">
+        <id name="companyId" type="int">
+            <column name="COMPANYID" />
+            <generator class="native" />
+        </id>
+        <property name="companyName" type="java.lang.String">
+            <column name="COMPANYNAME" />
+        </property>
+        <many-to-one name="login" class="Login" fetch="join">
+            <column name="LOGINID" />
+        </many-to-one>
+        <property name="createTime" type="timestamp">
+            <column name="CREATETIME" />
+        </property>
+        <property name="updateTime" type="timestamp">
+            <column name="UPDATETIME" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-10-31 15:53:25 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping package="com.company.dao.pojo">
+    <class name="Login" table="LOGIN">
+        <id name="loginId" type="int">
+            <column name="LOGINID" />
+            <generator class="native" />
+        </id>
+        <property name="username" type="java.lang.String">
+            <column name="USERNAME" unique="true" not-null="true" />
+        </property>
+        <property name="password" type="java.lang.String">
+            <column name="PASSWORD" not-null="true" />
+        </property>
+        <property name="priority" type="int">
+            <column name="PRIORITY" not-null="true" />
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="CREATETIME" />
+        </property>
+        <property name="updateTime" type="timestamp">
+            <column name="UPDATETIME" />
+        </property>
+        <one-to-one name="detail" class="Detail"></one-to-one>
+    </class>
+</hibernate-mapping>
