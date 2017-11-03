@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-10-31 15:49:07 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping package="com.company.dao.pojo">
+    <class name="Cargo" table="CARGO">
+        <id name="cargoId" type="int">
+            <column name="CARGOID" />
+            <generator class="native" />
+        </id>
+        <property name="cargoType" type="java.lang.String">
+            <column name="CARGOTYPE" />
+        </property>
+        <property name="cargoPrice" type="double">
+            <column name="CARGOPRICE" />
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="CREATETIME" />
+        </property>
+        <property name="updateTime" type="timestamp">
+            <column name="UPDATETIME" />
+        </property>
+    </class>
+</hibernate-mapping>

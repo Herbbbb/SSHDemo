@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-10-31 15:49:07 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping package="com.company.dao.pojo">
+    <class name="Boat" table="BOAT">
+        <id name="boatId" type="int">
+            <column name="BOATID" />
+            <generator class="native" />
+        </id>
+        <property name="boatName" type="java.lang.String">
+            <column name="BOATNAME" not-null="true" />
+        </property>
+        <property name="startTime" type="time">
+            <column name="STARTTIME" />
+        </property>
+        <property name="endTiem" type="time">
+            <column name="ENDTIEM" />
+        </property>
+        <property name="boatPrice" type="java.lang.Double">
+            <column name="BOATPRICE" />
+        </property>
+        <property name="flag" type="int">
+            <column name="FLAG" />
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="CREATETIME" />
+        </property>
+        <property name="updateTime" type="timestamp">
+            <column name="UPDATETIME" />
+        </property>
+        <many-to-one name="company" class="Company" fetch="join" lazy="false">
+            <column name="COMPANYID" />
+        </many-to-one>
+        <many-to-one name="lane" class="Lane" fetch="join">
+            <column name="LANEID" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

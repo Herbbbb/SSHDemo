@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-10-31 15:49:07 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping package="com.company.dao.pojo">
+    <class name="Bb" table="BB">
+        <id name="bbId" type="int">
+            <column name="BBID" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="box" class="Box" fetch="join">
+            <column name="BOXID" />
+        </many-to-one>
+        <many-to-one name="boat" class="Boat" fetch="join">
+            <column name="BOATID" />
+        </many-to-one>
+        <property name="amount" type="int">
+            <column name="AMOUNT" />
+        </property>
+        <property name="salesamount" type="int">
+            <column name="SALESAMOUNT" />
+        </property>
+        <property name="storeamount" type="int">
+            <column name="STOREAMOUNT" />
+        </property>
+    </class>
+</hibernate-mapping>

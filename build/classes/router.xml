@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="struts_package" namespace="/" extends="struts-default">
+		<!-- 报表1 -->
+		<action name="report">
+			<result>/WEB-INF/views/reportFromServer.html</result>
+		</action>
+		<action name="report2" class="com.company.action.ReportAction" method="getSalReport">
+		</action>
+		<!-- 报表2 -->
+		<action name="report4">
+			<result>/WEB-INF/views/reportFromServer1.html</result>
+		</action>
+		<action name="report6" class="com.company.action.ReportAction" method="getBoatReport">
+		</action>
+		<!-- freemake报表 -->
+		<action name="reportDetailInfo" class="com.company.action.ReportAction" method="getDetailInfo">
+			<result name="success">/WEB-INF/views/router.jsp</result>
+		</action>
+		<action name="show">
+			<result>/WEB-INF/views/freemake.html</result>
+		</action>
+		<!-- 注册 -->
+		<action name="registry">
+			<result>/WEB-INF/views/registry.jsp</result>
+		</action>
+		<action name="user_registry" class="com.company.action.RegistryAction" method="RegisterUser">
+			<result name="success">/index.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+	</package>
+	
+	
+</struts>

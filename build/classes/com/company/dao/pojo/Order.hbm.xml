@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-11-1 19:23:26 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.company.dao.pojo.Order" table="T_ORDER">
+        <id name="orderId" type="int">
+            <column name="ORDERID" />
+            <generator class="native" />
+        </id>
+        <property name="amount" type="int">
+            <column name="AMOUNT" />
+        </property>
+        <property name="cargoType" type="java.lang.String">
+            <column name="CARGOTYPE" />
+        </property>
+        <property name="allMoney" type="double">
+            <column name="ALLMONEY" />
+        </property>
+        <property name="loginId" type="int">
+            <column name="LOGINID" />
+        </property>
+        <many-to-one name="receive" class="com.company.dao.pojo.Receive" fetch="join">
+            <column name="RECEIVEID" />
+        </many-to-one>
+        <many-to-one name="bb" class="com.company.dao.pojo.Bb" fetch="join">
+            <column name="BBID" />
+        </many-to-one>
+        <property name="createTime" type="timestamp">
+            <column name="CREATETIME" />
+        </property>
+        <property name="updateTime" type="timestamp">
+            <column name="UPDATETIME" />
+        </property>
+    </class>
+</hibernate-mapping>
